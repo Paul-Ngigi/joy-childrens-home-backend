@@ -36,8 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Apps
     'child',
+
+    # Dependencies
     'pyuploadcare.dj',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -13,6 +13,7 @@ class Child(models.Model):
     talent = models.CharField(max_length=30, blank=True)
     medical_records = FileField(blank=True)
     school_report = FileField(blank=True)
+    joined_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return {self.first_name}
