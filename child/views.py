@@ -19,3 +19,8 @@ class ChildView(APIView):
 
     def delete(self, request, pk, format=None, *args, **kwargs):
         pass
+
+
+class SingleChild(APIView):
+    def get(self, request, format=None, *args, **kwargs):
+        pass
