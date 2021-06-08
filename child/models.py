@@ -10,7 +10,7 @@ class Child(models.Model):
     surname = models.CharField(max_length=30, blank=True)
     age = models.IntegerField()
     gender = models.CharField(max_length=10)
-    talent = models.CharField(max_length=30)
+    talent = models.CharField(max_length=30, blank=True)
     medical_records = FileField(blank=True)
     school_report = FileField(blank=True)
 
