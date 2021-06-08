@@ -17,3 +17,9 @@ class Child(models.Model):
 
     def __str__(self):
         return {self.first_name}
+
+    def save_child(self):
+        self.save()
+
+    def delete_child(self):
+        self.delete()
