@@ -1,4 +1,5 @@
 from django.db import models
+from adopter.models import Adopter
 from cloudinary.models import CloudinaryField
 
 
@@ -9,6 +10,7 @@ class Child(models.Model):
     middle_name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30, blank=True)
     age = models.IntegerField()
+    adopter = models.ForeignKey(Adopter, blank=True, null=True, on_delete=models.SET_NULL)
     gender = models.CharField(max_length=10)
     talent = models.CharField(max_length=30, blank=True)
     medical_records = models.FileField(upload_to="static/medical", blank=True)
