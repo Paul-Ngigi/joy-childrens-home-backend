@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'child',
     'staff',
     'adopter',
+    'sponser',
 
     # Dependencies
     'cloudinary',
