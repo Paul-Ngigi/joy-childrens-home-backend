@@ -8,7 +8,20 @@ class ChildSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        return Child.objects.create(**validated_data)
+        child = Child.objects.create(
+            passport_image=validated_data['passport_image'],
+            first_name=validated_data['first_name'],
+            middle_name=validated_data['middle_name'],
+            surname=validated_data['surname'],
+            age=validated_data['age'],
+            gender=validated_data['gender'],
+            talent=validated_data['talent'],
+            medical_records=validated_data['medical_records'],
+            school_report=validated_data['school_report'],
+        )
+
+        child.save()
+        return child
 
     def update(self, instance, validated_data):
         instance.passport_image = validated_data.get('passport_image', instance.passport_image)

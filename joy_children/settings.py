@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'child',
 
     # Dependencies
-    'pyuploadcare.dj',
+    'cloudinary',
     'rest_framework',
 ]
 
@@ -73,10 +74,11 @@ TEMPLATES = [
     },
 ]
 
-UPLOADCARE = {
-    'pub_key': '93e246b19816350d9176',
-    'secret': '539e41e7f338ae97985c',
-}
+cloudinary.config(
+    cloud_name="dkc8auhyn",
+    api_key="988281254287388",
+    api_secret="p9cYVU0XA3sCB_NZpoaYALiw7wI"
+)
 
 WSGI_APPLICATION = 'joy_children.wsgi.application'
 
@@ -115,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 

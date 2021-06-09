@@ -19,19 +19,29 @@ class AllChildren(APIView):
 
         return Response(serializer.data)
 
-    def post(self, request, format=None, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = self.serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        child_data = serializer.data
+
+        response = {
+            'data': {
+                'child': dict(child_data),
+                'status': 'success',
+                'child': 'Child has been added successfully'
+            }
+        }
+
+        return Response(response, status=status.HTTP_201_CREATED)
 
 
 class SingleChild(APIView):
     model = Child
     serializer = ChildSerializer
 
-    def get_object(self, request, pk, format=None, *args, **kwargs):
+    def get_object(self, pk):
         try:
             return self.model.objects.get(pk=pk)
         except self.model.DoesNotExist:
