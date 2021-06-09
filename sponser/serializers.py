@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Sponser
 
 
-class AdopterSerializer(serializers.ModelSerializer):
+class SponserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponser
         fields = '__all__'
