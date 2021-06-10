@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import AllSponsers, SingleSponser
 
-# Child urls
+# Apoter urls
 urlpatterns = [
     path('', AllSponsers.as_view()),
     path('<int:pk>/', SingleSponser.as_view()),

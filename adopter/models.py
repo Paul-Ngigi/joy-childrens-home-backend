@@ -29,3 +29,9 @@ class Adopter(models.Model):
 
     def __str__(self):
         return self.first_name
+
+    def save_adopter(self):
+        self.save()
+
+    def delete_adopter(self):
+        self.save()
