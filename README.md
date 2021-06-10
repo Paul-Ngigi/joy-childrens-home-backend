@@ -29,6 +29,8 @@ To get the code..
 4. Testing the application
   ```bash
   python3.9 manage.py test child
+  python3.9 manage.py test adopter
+  python3.9 manage.py test sponser
   ```
 Open the application on your browser `127.0.0.1:8000`.
 
